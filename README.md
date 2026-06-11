@@ -50,6 +50,10 @@ and the first run downloads a few MIRI imaging reference files (~100 MB) into th
 | 10 | atlas-style 2D + 1D figures and `.ecsv` spectra for all 9 example sources |
 | 11 | caveats & tips (saturation, contamination, band edges, extended sources, …) |
 
+The trace + dispersion model in action (generated in step 6 of the notebook): each white star is a virtual source, and the colored dots mark its dispersed position as wavelength increases — dispersion runs along −y with a slight position-dependent tilt in x.
+
+![trace and dispersion animation](media/wfss_trace_dispersion.gif)
+
 Example output (GN 1092837, z = 0.458, the brightest source in the example field):
 
 ![example spectrum](media/spec_GN_1092837.png)
