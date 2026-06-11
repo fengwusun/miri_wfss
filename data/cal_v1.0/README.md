@@ -1,9 +1,10 @@
 # MIRI WFSS (P750L) Calibration Suite — MIRI_WFSS_CAL_v1.0
 
-Release date: 2026-06-10.  Built from 5 archival JWST programs with FULL-array
-P750L exposures: GO-3224 (McKinney), GO-4192 (Alberts/SMILES), GO-4762
-(Fujimoto) in GOODS-N; GO-8544 (Helton) in GOODS-S; CAL-9505 (Petric, LMC,
-true MIR_WFSS) and CAL-9265 (Petric, HD 163466 CALSPEC standard).
+Release date: 2026-06-10 (background refreshed to sky v5 on 2026-06-11).
+Built from 5 archival JWST programs with FULL-array P750L exposures: GO-3224
+(McKinney), GO-4192 (Alberts/SMILES), GO-4762 (Fujimoto) in GOODS-N; GO-8544
+(Helton) in GOODS-S; CAL-9505 (Petric, LMC, true MIR_WFSS) and CAL-9265
+(Petric, HD 163466 CALSPEC standard).
 
 This directory is the repository copy of the v1.0 release (flattened layout,
 without the example-spectrum products and the summary deck).  SHA-256 hashes
@@ -22,8 +23,8 @@ region is x = 387-1020, y = 15-1017 (`region_mask_P750L.fits`).
 | File | Content |
 |---|---|
 | `flat_P750L_F560W.fits`         | flat field (F560W imaging flat) |
-| `master_sky_P750L_v3.fits`      | master sky, scale per frame and subtract |
-| `eigen_skies_v3_P750L.fits`     | optional PCA sky residual components (mode B) |
+| `master_sky_P750L_v5.fits`      | master sky (consensus-patched) + ADDITIVE defect map |
+| `eigen_skies_v5_P750L.fits`     | optional PCA sky residual components (outlier-patched, mode B) |
 | `region_mask_P750L.fits`        | WFSS illuminated-region mask |
 | `DISP_LRS_WFSS_v2.1.dat`        | trace: dx(x0, y0, dy), 30 coefficients |
 | `DISPL_LRS_WFSS_P750L_v2.1.dat` | wavelength: dy(x0, y0, lambda), 16 coefficients |
@@ -36,7 +37,18 @@ region is x = 387-1020, y = 15-1017 (`region_mask_P750L.fits`).
 ## Usage (per source at direct-image position x0, y0)
 
 1. Calibrate the rate frame: divide by the flat, subtract the scaled master
-   sky (mode A; optionally fit the PCA components, mode B).
+   sky (mode A; optionally fit the PCA components, mode B), then remove a
+   sigma-clipped median from every detector row of the residual (computed
+   over source-masked WFSS pixels) to suppress EMI banding and row-wise
+   gradients. Use `master_sky_P750L_v5.fits`; before the scale fit, subtract
+   its ADDITIVE extension from the flat-fielded frame unscaled (it maps
+   additive detector defects in DN/s, derived from a 304-frame
+   consensus-residual regression) and treat |ADDITIVE| > 0.5 DN/s pixels as
+   DO_NOT_USE. The mode-B PCA components (`eigen_skies_v5`) are
+   outlier-patched against an along-row running median so that compact
+   imprints of imperfectly masked sources cannot be stamped into corrected
+   frames; if you use mode B, difference the result against its mode-A
+   counterpart before trusting compact faint sources.
 2. Trace: dx_s(x0, y0, dy_s) from `DISP_LRS_WFSS_v2.1.dat`
    (polynomial form `fit_disp_order23`; x, y offset by -1024 internally).
 3. Wavelength per row: invert dy_s(x0, y0, lambda) from
