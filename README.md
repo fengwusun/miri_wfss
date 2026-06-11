@@ -7,7 +7,7 @@ When the MIRI LRS prism is used without the slit on the FULL imager array, every
 - **`data/cal_v1.0/`** — the `MIRI_WFSS_CAL_v1.0` calibration suite: flat field, master sky (+ optional PCA components), WFSS region mask, trace and wavelength polynomial tables (v2.1), absolute response R(λ) (v2, CALSPEC-anchored), and L-flat, with a SHA-256 manifest. See `data/cal_v1.0/README.md` for the calibration model and file details.
 - **`MIRI_WFSS_extraction_example_FSun.ipynb`** — one self-contained notebook that turns public MIRI P750L FULL `rate` files into flux-calibrated 2D + 1D spectra: flat + sky calibration, WCS attachment, trace rectification, flux calibration, PA-grouped sigma-clipped co-addition, and boxcar/optimal 1D extraction. Committed with executed outputs so you can read the full worked example without running anything.
 - **`download_goodsn_example_rates.sh`** — fetches the example dataset (GO-4192/SMILES, GOODS-N: 8 × 364 s P750L exposures, ~170 MB) directly from MAST.
-- **`data/catalogs/goodsn_example_sources.csv`** — the 13 galaxies with literature spectroscopic redshifts covered by the example exposures.
+- **`data/catalogs/goodsn_example_sources.csv`** — the 9 galaxies with literature spectroscopic redshifts covered by the example exposures.
 
 If you have any question, please do not hesitate to contact me via my email: fengwu.sun在cfa.harvard.edu
 
@@ -47,7 +47,7 @@ and the first run downloads a few MIRI imaging reference files (~100 MB) into th
 | 7 | flux-calibrate with R(λ); single-exposure spectrum |
 | 8 | co-add exposures: PA grouping, sigma-clipped weighted mean, pairwise N = 2 rejection |
 | 9 | 1D extraction: small-aperture boxcar + optimal (Horne), measured/Gaussian/imaging profiles |
-| 10 | atlas-style 2D + 1D figures and `.ecsv` spectra for all 13 example sources |
+| 10 | atlas-style 2D + 1D figures and `.ecsv` spectra for all 9 example sources |
 | 11 | caveats & tips (saturation, contamination, band edges, extended sources, …) |
 
 Example output (GN 1092837, z = 0.458, the brightest source in the example field):
