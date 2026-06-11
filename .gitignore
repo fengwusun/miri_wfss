@@ -1,0 +1,12 @@
+# downloaded example data (use download_goodsn_example_rates.sh)
+data/rates/
+
+# notebook products (lv1.5 frames, extracted spectra)
+products/
+
+# internal planning notes
+PLAN.md
+
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store

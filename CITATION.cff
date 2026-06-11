@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: >-
+  If you use the MIRI WFSS calibration products or the extraction workflow
+  from this repository, please cite the paper below (and the Zenodo record
+  once the DOI is minted).
+title: "miri_wfss: JWST MIRI P750L wide-field slitless spectroscopy calibration and extraction"
+version: v1.0
+date-released: 2026-06-11
+license: MIT
+repository-code: "https://github.com/fengwusun/miri_wfss"
+# doi: 10.5281/zenodo.XXXXXXX   # placeholder — added at the first tagged release
+authors:
+  - family-names: Sun
+    given-names: Fengwu
+    orcid: "https://orcid.org/0000-0002-4622-6617"
+    affiliation: "Center for Astrophysics | Harvard & Smithsonian"
+preferred-citation:
+  type: article
+  title: >-
+    AI-Assisted Calibration of JWST/MIRI Prism Wide-Field Slitless
+    Spectroscopy: Methodology, Performance, and a Mid-Infrared Spectral
+    Atlas of Galaxies at z = 0-4 in the GOODS Fields
+  authors:
+    - family-names: Sun
+      given-names: Fengwu
+      orcid: "https://orcid.org/0000-0002-4622-6617"
+  year: 2026
+  journal: "in preparation"

@@ -1,0 +1,21 @@
+# MIRI_WFSS_CAL_v1.0 — sha256 manifest (repo subset; hashes identical to the original release manifest of 2026-06-10)
+a4734874528d809f57ac6c04d61261c0c972e13cf66c68af8d69557cb8dbf1d8         369  DISPL_LRS_WFSS_P750L_v2.1.dat
+    provenance: Wavelength dy(x0,y0,lambda), 16-coeff fit_disp_order32; 220-610 km/s RMS (7.9-13.1 um)
+2c7e775c5ce2f95af2b4b226d79ce85d661f91a358ec7c1f3e991b06e1133840         686  DISP_LRS_WFSS_v2.1.dat
+    provenance: Trace dx(x0,y0,dy), 30-coeff fit_disp_order23; LMC point-source MAD 0.055 px
+055fef455af80d11e0123a8cb40a6e877dd52c794256be104f50402ff2da10b7        2888  FLUXCAL_LRS_WFSS_v2.dat
+    provenance: Response R(lambda) [aperture-summed DN/s per Jy]; CALSPEC HD163466 baseline (anchor=1, 7.44-13.81 um) + G/K-ensemble blue shape (anchor=0)
+a62a6d39224436b0ee88dc570ee06e9842f8b636e2860707e28f853424a98f74     2543040  LFLAT_LRS_WFSS_v2.fits
+    provenance: L-flat = identity; CALSPEC grid max|L-1|=0.010, GN/GS repeats MAD 0.044
+6dfd39cc7fcec235187b05f70e7683489f75416bd6ecf9fe38b780b93a9fb5a1         117  VERSION
+    provenance: Example product: calibrated, sigma-clipped DQ-aware co-added WFSS spectrum (see README)
+ba2bc6cbcc0038d02779ea76a624cde66510561757b5c8204e6ab379c604c41c    53288640  eigen_skies_v3_P750L.fits
+    provenance: Optional PCA sky components (mode B residual correction), v3
+bdd42eecb9d97cbf7da1c5ca2efe738b7706e51023826410e920bda5f1dd5705     5293440  flat_P750L_F560W.fits
+    provenance: Imaging flat (F560W) adopted for P750L WFSS; GO/MIRI-LRS flat project
+d86100bf69f9fb38b35f53e87939b2a88567b3d98c3c7458ba80162132f89f86        2356  hd163466_R_direct.ecsv
+    provenance: R measured directly on CALSPEC HD163466 (jw09265 5-position slitless grid)
+f24190fa0265245d6bb3e4d5a422a6e7003d731b5594de1d78664f3b94d1b014     5293440  master_sky_P750L_v3.fits
+    provenance: Master sky (supersky) for P750L WFSS, v3; sigma-clipped stack of archival FULL P750L frames
+0ccc62c80d6a6fdcce7190a001966a05d59bd04da019ace62763ffb35817a0bf     1071360  region_mask_P750L.fits
+    provenance: WFSS illuminated-region mask (x=387-1020, y=15-1017)
