@@ -1,3 +1,3 @@
 MIRI_WFSS_CAL_v1.0
-release date: 2026-06-10
-internal: trace/wavecal v2.1, fluxcal v2 (CALSPEC baseline), flat/sky v3
+release date: 2026-06-11
+internal: trace/wavecal v2.1, fluxcal v2 (CALSPEC baseline), flat F560W, sky v5 (consensus-patched + additive defect map)

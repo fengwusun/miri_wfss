@@ -78,4 +78,5 @@ The example data are from JWST program GO-4192 (PI: S. Alberts; SMILES). The cal
 #### v1.0 (2026.06.11):
 - Initial public release: `MIRI_WFSS_CAL_v1.0` calibration suite (trace/wavecal v2.1, fluxcal v2, flat v3, sky v5), extraction example notebook on GO-4192 GOODS-N data, example source catalog, MAST download script.
 - 2026.06.11 background refresh (sky v5): consensus-patched master sky with an additive detector-defect map (subtracted unscaled; defect pixels DQ-flagged) and per-row sigma-clipped de-banding in the lv1.5 step; outlier-patched PCA basis for mode B.
+- 2026.06.11 rectification robustness: per-exposure rejection of corrupted-low pixels (cosmic-ray-shower skirts and badly corrected jumps, often unflagged in DQ) against a running median along the trace; masked pixels propagate as empty into the co-add and are filled from the other exposures — essential for 2-exposure co-adds at near-identical dithers.
 - A Zenodo DOI and the full 182-source GOODS spectral atlas will be linked here with the paper.
