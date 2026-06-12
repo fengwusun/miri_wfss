@@ -4,7 +4,7 @@ JWST MIRI prism (P750L) wide-field slitless spectroscopy — calibration referen
 
 When the MIRI LRS prism is used without the slit on the FULL imager array, every source in the illuminated field produces a dispersed mid-infrared spectrum (4.7–13.8 µm) — wide-field slitless spectroscopy (WFSS). Several archival JWST programs observed this way, but there is no STScI pipeline support for extracting these data. This repository provides both the calibration and a complete, worked extraction path:
 
-- **`data/cal_v1.0/`** — the `MIRI_WFSS_CAL_v1.0` calibration suite: flat field, master sky v5 (consensus-patched, with an additive detector-defect map and optional PCA components), WFSS region mask, trace and wavelength polynomial tables (v2.1), absolute response fR(λ) (v2, CALSPEC-anchored), and L-flat, with a SHA-256 manifest. See `data/cal_v1.0/README.md` for the calibration model and file details.
+- **`data/cal_v1.0/`** — the `MIRI_WFSS_CAL_v1.0` calibration suite: flat field, master sky v5 (consensus-patched, with an additive detector-defect map and optional PCA components), WFSS region mask, trace and wavelength polynomial tables (v2.1), and absolute response fR(λ) (v2, CALSPEC-anchored), with a SHA-256 manifest. The position dependence of the response (L-flat) was tested and is consistent with identity, so no L-flat correction is applied or shipped. See `data/cal_v1.0/README.md` for the calibration model and file details.
 - **`MIRI_WFSS_extraction_example_FSun.ipynb`** — one self-contained notebook that turns public MIRI P750L FULL `rate` files into flux-calibrated 2D + 1D spectra: flat + sky calibration, WCS attachment, trace rectification, flux calibration, PA-grouped sigma-clipped co-addition, and boxcar/optimal 1D extraction. Committed with executed outputs so you can read the full worked example without running anything.
 - **`download_goodsn_example_rates.sh`** — fetches the example dataset (GO-4192/SMILES, GOODS-N: 8 × 364 s P750L exposures, ~170 MB) directly from MAST.
 - **`data/catalogs/goodsn_example_sources.csv`** — the 9 galaxies with literature spectroscopic redshifts covered by the example exposures.
@@ -66,7 +66,7 @@ Example output (GN 1092837, z = 0.458, the brightest source in the example field
 | Wavelength | 0.10–0.25 resolution element (220–610 km/s RMS) | PN + galaxy lines, 7.9–13.1 µm |
 | Flux, 7.4–13.8 µm | σ(fR)/fR = 0.3%; 1–2% absolute | CALSPEC standard, direct |
 | Flux, 4.7–7.4 µm | ~5% shape | stellar ensemble, overlap-tied |
-| L-flat | identity; max \|L−1\| = 0.010 | CALSPEC 5-position grid; galaxy repeats MAD 4.4% |
+| L-flat | identity; max \|L−1\| = 0.010 (no correction applied) | CALSPEC 5-position grid; galaxy repeats MAD 4.4% |
 | End-to-end | broadband closure 0.999; field star 1.016 ± 0.042 | LMC PN; 2MASS/WISE SED |
 
 Full derivation, validation, and the GOODS-N/GOODS-S/LMC spectral atlas: Sun (2026).

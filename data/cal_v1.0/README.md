@@ -27,9 +27,8 @@ region is x = 387-1020, y = 15-1017 (`region_mask_P750L.fits`).
 | `region_mask_P750L.fits`        | WFSS illuminated-region mask |
 | `DISP_LRS_WFSS_v2.1.dat`        | trace: dx(x0, y0, dy), 30 coefficients |
 | `DISPL_LRS_WFSS_P750L_v2.1.dat` | wavelength: dy(x0, y0, lambda), 16 coefficients |
-| `FLUXCAL_LRS_WFSS_v2.dat`       | response R(lambda) + per-bin anchor provenance |
+| `FLUXCAL_LRS_WFSS_v2.dat`       | response fR(lambda) + per-bin anchor provenance |
 | `hd163466_R_direct.ecsv`        | CALSPEC-direct response measurement |
-| `LFLAT_LRS_WFSS_v2.fits`        | L(x, y) = identity (validated) |
 | `VERSION`                       | release version stamp |
 | `MANIFEST.txt`                  | sha256 manifest of this directory |
 
@@ -52,8 +51,11 @@ region is x = 387-1020, y = 15-1017 (`region_mask_P750L.fits`).
    barycentric correction (VELOSYS) as needed.
 4. Extract: sum DN/s over the cross-dispersion aperture per row
    (local background from the cutout edges).
-5. Flux: F_nu [Jy] = DN/s(row) / R(lambda_row), with R from
-   `FLUXCAL_LRS_WFSS_v2.dat` (no position term needed: L = 1).
+5. Flux: F_nu [Jy] = DN/s(row) / fR(lambda_row), with fR from
+   `FLUXCAL_LRS_WFSS_v2.dat`. No positional (L-flat) term is applied: the
+   position dependence of the response was tested and is consistent with
+   identity (CALSPEC 5-position grid max |L-1| = 0.010, MAD 0.008; GN/GS
+   repeated galaxy spectra MAD 0.044), so no L-flat file is shipped.
    The table's `anchor` column: 1 = measured directly on the CALSPEC
    standard HD 163466 (7.44-13.81 um); 0 = G/K-ensemble shape rescaled to
    the CALSPEC overlap (blue of the standard's saturation limit).
