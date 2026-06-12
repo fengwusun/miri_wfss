@@ -67,7 +67,7 @@ Example output (GN 1092837, z = 0.458, the brightest source in the example field
 | Flux, 7.4–13.8 µm | σ(fR)/fR = 0.3%; 1–2% absolute | CALSPEC standard, direct |
 | Flux, 4.7–7.4 µm | ~5% shape | stellar ensemble, overlap-tied |
 | L-flat | identity; max \|L−1\| = 0.010 (no correction applied) | CALSPEC 5-position grid; galaxy repeats MAD 4.4% |
-| End-to-end | broadband closure 0.999; field star 1.016 ± 0.042 | LMC PN; 2MASS/WISE SED |
+| End-to-end | field star 1.016 ± 0.042; PN vs F560W image 1.12–1.16 | 2MASS/WISE SED; CAL-9505 visit |
 
 Full derivation, validation, and the GOODS-N/GOODS-S/LMC spectral atlas: Sun (2026).
 
