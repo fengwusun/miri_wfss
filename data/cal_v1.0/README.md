@@ -1,7 +1,7 @@
 # MIRI WFSS (P750L) Calibration Suite — MIRI_WFSS_CAL_v1.0
 
 Release date: 2026-06-11.  Built from 5 archival JWST programs with FULL-array
-P750L exposures: GO-3224 (McKinney), GO-4192 (Alberts/SMILES), GO-4762
+P750L exposures: GO-3224 (McKinney), GO-4192 (Alberts), GO-4762
 (Fujimoto) in GOODS-N; GO-8544 (Helton) in GOODS-S; CAL-9505 (Petric, LMC,
 true MIR_WFSS) and CAL-9265 (Petric, HD 163466 CALSPEC standard).
 
