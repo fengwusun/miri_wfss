@@ -11,7 +11,7 @@ in `MANIFEST.txt` are identical to those of the original release manifest.
 
 ## Calibration model
 
-    DN/s(x, y) = R(lambda) x L(x, y) x F_nu(lambda)  +  sky(x, y)
+    DN/s(x, y) = fR(lambda) x L(x, y) x F_nu(lambda)  +  sky(x, y)
 
 applied to FULL-array P750L rate images (DN/s). Dispersion runs along the
 detector y axis (more negative dy = longer wavelength); the illuminated WFSS
