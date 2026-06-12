@@ -55,7 +55,7 @@ region is x = 387-1020, y = 15-1017 (`region_mask_P750L.fits`).
    `FLUXCAL_LRS_WFSS_v2.dat`. No positional (L-flat) term is applied: the
    position dependence of the response was tested and is consistent with
    identity (CALSPEC 5-position grid max |L-1| = 0.010, MAD 0.008; GN/GS
-   repeated galaxy spectra MAD 0.044), so no L-flat file is shipped.
+   repeated galaxy spectra MAD 0.044), so no L-flat file is needed.
    The table's `anchor` column: 1 = measured directly on the CALSPEC
    standard HD 163466 (7.44-13.81 um); 0 = G/K-ensemble shape rescaled to
    the CALSPEC overlap (blue of the standard's saturation limit).
@@ -69,8 +69,8 @@ The notebook at the root of this repository
 |---|---|
 | trace            | MAD 0.055 px (LMC point sources); STScI specwcs_0146: 1.02 px RMS |
 | wavelength       | 220-610 km/s RMS = 0.1-0.25 resel (7.9-13.1 um); ~0.4 resel at 5.6-6.2 um |
-| flux (7.4-13.8)  | CALSPEC-direct; sigma(R)/R median 0.3 %; absolute ~1-2 % (CALSPEC) |
-| flux (4.5-7.4)   | ensemble shape, sigma(R)/R median ~5 %; tied through the 7.4-9.5 um overlap |
+| flux (7.4-13.8)  | CALSPEC-direct; sigma(fR)/fR median 0.3 %; absolute ~1-2 % (CALSPEC) |
+| flux (4.5-7.4)   | ensemble shape, sigma(fR)/fR median ~5 %; tied through the 7.4-9.5 um overlap |
 | L-flat           | identity; CALSPEC 5-position grid max |L-1| = 0.010 (MAD 0.008); GN/GS repeats MAD 0.044 |
 
 Independent validation: a G=17.1 field star (2MASS/WISE SED) gives
@@ -80,7 +80,7 @@ obs/expected = 1.016 +- 0.042; six GOODS-N G/K stars give 0.90-1.07.
 - JWST absolute flux calibration approach: Gordon et al. 2022, AJ 163, 267.
 - CALSPEC: hd163466_stis_007.fits,
   https://www.stsci.edu/hst/instrumentation/reference-data-for-calibration-and-tools/astronomical-catalogs/calspec
-- Wavelength anchors: ISO PN line atlas (Bernard-Salas et al. 2001) + LMC PN
-  LHA 120-N 133 + GOODS-N spec-z galaxy lines.
+- Wavelength anchors: ISO PN line atlas (Bernard-Salas et al. 2001) + LMC PN LHA 120-N 133 + GOODS-N spec-z 
+galaxy lines compiled from literature (mostly available on SIMBAD).
 
-Contact: Fengwu Sun.
+Contact: Fengwu Sun (Harvard University → Westlake University; sunfengwu在westlake.edu.cn).
