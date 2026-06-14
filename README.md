@@ -75,6 +75,9 @@ Full derivation, validation, and the GOODS-N/GOODS-S/LMC spectral atlas: Sun (20
 
 The example data are from JWST program GO-4192 (PI: S. Alberts). The calibration suite is built from public exposures of GO-3224 (PI: J. McKinney), GO-4192, GO-4762 (PI: S. Fujimoto), GO-8544 (PI: J. Helton), CAL-9505 and CAL-9265 (PI: A. Petric), obtained from the [Mikulski Archive for Space Telescopes](https://mast.stsci.edu) (MAST) at the Space Telescope Science Institute. Source coordinates, F444W photometry, and redshift compilations draw on the JADES GOODS-N data release 5 ([Eisenstein et al. 2026](https://ui.adsabs.harvard.edu/abs/2026ApJS..283....6E/abstract); [Johnson et al. 2026](https://ui.adsabs.harvard.edu/abs/2026arXiv260115954J/abstract); [Robertson et al. 2026](https://ui.adsabs.harvard.edu/abs/2026arXiv260115956R/abstract)) and literature spectroscopic surveys of GOODS-N.
 
+#### v1.0.1 (2026.06.14):
+- Flux calibration, blue end: the ensemble-anchored response bins (`anchor=0`, 4.46–7.24 µm) were re-tied on the 7.5–9.0 µm CALSPEC overlap (scale 1.0423), shifting those bins by −0.33% from v1.0.0 — i.e. raising blue-end fluxes by 0.33%, well within the ~5% blue-shape uncertainty. The CALSPEC-direct red response (`anchor=1`, 7.44–13.81 µm) is unchanged. Example spectra re-extracted; `VERSION` and the SHA-256 manifest updated.
+
 #### v1.0.0 (2026.06.12):
 - Initial public release: `MIRI_WFSS_CAL_v1.0` calibration suite (trace/wavecal v2.1, fluxcal v2, flat v3, sky v5), extraction example notebook on GO-4192 GOODS-N data, example source catalog, MAST download script.
 - 2026.06.11 background refresh (sky v5): consensus-patched master sky with an additive detector-defect map (subtracted unscaled; defect pixels DQ-flagged) and per-row sigma-clipped de-banding in the lv1.5 step; outlier-patched PCA basis for mode B.

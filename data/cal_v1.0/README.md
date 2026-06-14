@@ -70,7 +70,7 @@ The notebook at the root of this repository
 | trace            | MAD 0.055 px (LMC point sources); STScI specwcs_0146: 1.02 px RMS |
 | wavelength       | 220-610 km/s RMS = 0.1-0.25 resel (7.9-13.1 um); ~0.4 resel at 5.6-6.2 um |
 | flux (7.4-13.8)  | CALSPEC-direct; sigma(fR)/fR median 0.3 %; absolute ~1-2 % (CALSPEC) |
-| flux (4.5-7.4)   | ensemble shape, sigma(fR)/fR median ~5 %; tied through the 7.4-9.5 um overlap |
+| flux (4.5-7.4)   | ensemble shape, sigma(fR)/fR median ~5 %; tied through the 7.5-9.0 um CALSPEC overlap (scale 1.0423) |
 | L-flat           | identity; CALSPEC 5-position grid max |L-1| = 0.010 (MAD 0.008); GN/GS repeats MAD 0.044 |
 
 Independent validation: a G=17.1 field star (2MASS/WISE SED) gives

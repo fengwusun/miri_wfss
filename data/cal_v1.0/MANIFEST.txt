@@ -1,9 +1,9 @@
-# MIRI_WFSS_CAL_v1.0 — sha256 manifest (repo subset of the 2026-06-11 release; data-file hashes identical to the release manifest)
+# MIRI_WFSS_CAL_v1.0 — sha256 manifest (repo subset of the 2026-06-14 release; data-file hashes identical to the release manifest)
 # note: the L-flat is validated to be identity (max |L-1| = 0.010) and is intentionally not shipped or applied
 a4734874528d809f57ac6c04d61261c0c972e13cf66c68af8d69557cb8dbf1d8         369  DISPL_LRS_WFSS_P750L_v2.1.dat
 2c7e775c5ce2f95af2b4b226d79ce85d661f91a358ec7c1f3e991b06e1133840         686  DISP_LRS_WFSS_v2.1.dat
-055fef455af80d11e0123a8cb40a6e877dd52c794256be104f50402ff2da10b7        2888  FLUXCAL_LRS_WFSS_v2.dat
-071383f689ff5f247c4e31d17ab86ecf3c4ca8adfa874b87ff4ceb17e9c874ae         166  VERSION
+7ad5986edcf2ea00a50cabf606ea9f0e03ed781894f84a0c079fdabacd9ce512        2888  FLUXCAL_LRS_WFSS_v2.dat
+3e1b83be312729819c8dba3a820cbd619fa5820b29d96a28a4b8e5cc92e392e4         337  VERSION
 86399440cc1830c8d871764056c96ccbaf7867e0857f9f47be355b53b2a3bf9d    53288640  eigen_skies_v5_P750L.fits
 bdd42eecb9d97cbf7da1c5ca2efe738b7706e51023826410e920bda5f1dd5705     5293440  flat_P750L_F560W.fits
 d86100bf69f9fb38b35f53e87939b2a88567b3d98c3c7458ba80162132f89f86        2356  hd163466_R_direct.ecsv

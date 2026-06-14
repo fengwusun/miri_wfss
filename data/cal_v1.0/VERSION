@@ -1,3 +1,4 @@
 MIRI_WFSS_CAL_v1.0
-release date: 2026-06-11
+release date: 2026-06-14
 internal: trace/wavecal v2.1, fluxcal v2 (CALSPEC baseline), flat F560W, sky v5 (consensus-patched + additive defect map)
+changelog: 2026-06-14 fluxcal blue end re-tied on the 7.5-9.0 um CALSPEC overlap (scale 1.0423); anchor=0 bins -0.33% vs prior build, anchor=1 (CALSPEC-direct) unchanged.
