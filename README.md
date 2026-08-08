@@ -11,7 +11,7 @@ When the MIRI LRS prism is used without the slit on the FULL imager array, every
 
 If you have any question, please do not hesitate to contact me via my email: sunfengwu在westlake.edu.cn
 
-If you find the calibration products and/or this workflow helpful, it would be great if you could acknowledge it in your research and cite the MIRI WFSS calibration + atlas paper: **Sun (2026), "AI-Assisted Calibration of JWST/MIRI Prism Wide-Field Slitless Spectroscopy: Methodology, Performance, and a Mid-Infrared Spectral Atlas of Galaxies at z = 0–4 in the GOODS Fields"** (in preparation; the arXiv/ADS link will appear here as soon as it is public, see also `CITATION.cff`).
+If you find the calibration products and/or this workflow helpful, it would be great if you could acknowledge it in your research and cite the MIRI WFSS calibration + atlas paper: **Sun (2026), "An Archival Calibration of JWST/MIRI Prism Wide-Field Slitless Spectroscopy: Methodology, Performance, and a Mid-Infrared Spectral Atlas of Galaxies at z = 0–4 in the GOODS Fields"** (in preparation; the arXiv/ADS link will appear here as soon as it is public, see also `CITATION.cff`).
 
 ## Quick start
 
