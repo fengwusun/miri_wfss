@@ -1,0 +1,5 @@
+MIRI_WFSS_CAL_v1.1
+release date: 2026-08-08
+internal: trace v2.1, wavecal v3.1, fluxcal v3.1 (CALSPEC baseline), flat F560W, sky v5 (consensus-patched + additive defect map)
+changelog: 2026-08-08 wavecal red anchor corrected ([Ar V] 13.102 -> [Ne II] 12.814); wavelengths -41/-238/-353 nm at 11/12.8/13.5 um vs v2.1; fluxcal re-derived on the corrected scale (CALSPEC-direct 7.44-13.45 um, blue tie 1.0492); valid range 4.7-13.45 um.
+changelog: 2026-06-14 fluxcal blue end re-tied on the 7.5-9.0 um CALSPEC overlap (scale 1.0423); anchor=0 bins -0.33% vs prior build, anchor=1 (CALSPEC-direct) unchanged.

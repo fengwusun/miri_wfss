@@ -1,13 +1,17 @@
-# MIRI WFSS (P750L) Calibration Suite — MIRI_WFSS_CAL_v1.0
+# MIRI WFSS (P750L) Calibration Suite — MIRI_WFSS_CAL_v1.1
 
-Release date: 2026-06-11.  Built from 5 archival JWST programs with FULL-array
+Release date: 2026-08-08 (v1.1; first release 2026-06-11).  Built from 5 archival JWST programs with FULL-array
 P750L exposures: GO-3224 (McKinney), GO-4192 (Alberts), GO-4762
 (Fujimoto) in GOODS-N; GO-8544 (Helton) in GOODS-S; CAL-9505 (Petric, LMC,
 true MIR_WFSS) and CAL-9265 (Petric, HD 163466 CALSPEC standard).
 
-This directory is the repository copy of the v1.0 release (flattened layout,
-without the example-spectrum products and the summary deck).  SHA-256 hashes
-in `MANIFEST.txt` are identical to those of the original release manifest.
+This directory is the v1.1 calibration suite (flattened layout, without the
+example-spectrum products).  v1.1 corrects the wavelength calibration: the red
+anchor previously identified as [Ar V] 13.102 um is [Ne II] 12.814 um.
+Wavelengths shift by -41/-238/-353 nm at 11/12.8/13.5 um relative to v1.0, and
+the response is re-derived on the corrected scale (CALSPEC-direct over
+7.44-13.45 um).  At fixed observed wavelength, calibrated flux densities change
+by <2% blueward of 11 um and by up to ~+25% at 13.4 um.
 
 ## Calibration model
 
@@ -26,8 +30,8 @@ region is x = 387-1020, y = 15-1017 (`region_mask_P750L.fits`).
 | `eigen_skies_v5_P750L.fits`     | optional PCA sky residual components (outlier-patched, mode B) |
 | `region_mask_P750L.fits`        | WFSS illuminated-region mask |
 | `DISP_LRS_WFSS_v2.1.dat`        | trace: dx(x0, y0, dy), 30 coefficients |
-| `DISPL_LRS_WFSS_P750L_v2.1.dat` | wavelength: dy(x0, y0, lambda), 16 coefficients |
-| `FLUXCAL_LRS_WFSS_v2.dat`       | response fR(lambda) + per-bin anchor provenance |
+| `DISPL_LRS_WFSS_P750L_v3.1.dat` | wavelength: dy(x0, y0, lambda), 16 coefficients |
+| `FLUXCAL_LRS_WFSS_v3.1.dat`     | response fR(lambda) + per-bin anchor provenance |
 | `hd163466_R_direct.ecsv`        | CALSPEC-direct response measurement |
 | `VERSION`                       | release version stamp |
 | `MANIFEST.txt`                  | sha256 manifest of this directory |
@@ -46,18 +50,18 @@ region is x = 387-1020, y = 15-1017 (`region_mask_P750L.fits`).
 2. Trace: dx_s(x0, y0, dy_s) from `DISP_LRS_WFSS_v2.1.dat`
    (polynomial form `fit_disp_order23`; x, y offset by -1024 internally).
 3. Wavelength per row: invert dy_s(x0, y0, lambda) from
-   `DISPL_LRS_WFSS_P750L_v2.1.dat` (`fit_disp_order32`,
+   `DISPL_LRS_WFSS_P750L_v3.1.dat` (`fit_disp_order32`,
    Delta-lambda = lambda - 3.95 um). Vacuum wavelengths; apply your own
    barycentric correction (VELOSYS) as needed.
 4. Extract: sum DN/s over the cross-dispersion aperture per row
    (local background from the cutout edges).
 5. Flux: F_nu [Jy] = DN/s(row) / fR(lambda_row), with fR from
-   `FLUXCAL_LRS_WFSS_v2.dat`. No positional (L-flat) term is applied: the
+   `FLUXCAL_LRS_WFSS_v3.1.dat`. No positional (L-flat) term is applied: the
    position dependence of the response was tested and is consistent with
-   identity (CALSPEC 5-position grid max |L-1| = 0.010, MAD 0.008; GN/GS
-   repeated galaxy spectra MAD 0.044), so no L-flat file is needed.
+   identity (CALSPEC 5-position grid max |L-1| = 0.016, MAD 0.003; repeated
+   GOODS-N star spectra MAD 0.014), so no L-flat file is needed.
    The table's `anchor` column: 1 = measured directly on the CALSPEC
-   standard HD 163466 (7.44-13.81 um); 0 = G/K-ensemble shape rescaled to
+   standard HD 163466 (7.44-13.45 um); 0 = G/K-ensemble shape rescaled to
    the CALSPEC overlap (blue of the standard's saturation limit).
 
 The notebook at the root of this repository
@@ -68,13 +72,15 @@ The notebook at the root of this repository
 | Component | Accuracy |
 |---|---|
 | trace            | MAD 0.055 px (LMC point sources); STScI specwcs_0146: 1.02 px RMS |
-| wavelength       | 220-610 km/s RMS = 0.1-0.25 resel (7.9-13.1 um); ~0.4 resel at 5.6-6.2 um |
-| flux (7.4-13.8)  | CALSPEC-direct; sigma(fR)/fR median 0.3 %; absolute ~1-2 % (CALSPEC) |
-| flux (4.5-7.4)   | ensemble shape, sigma(fR)/fR median ~5 %; tied through the 7.5-9.0 um CALSPEC overlap (scale 1.0423) |
-| L-flat           | identity; CALSPEC 5-position grid max |L-1| = 0.010 (MAD 0.008); GN/GS repeats MAD 0.044 |
+| wavelength       | 87-144 km/s RMS = 0.03-0.08 resel (7.9-12.8 um); ~0.2 resel at 5.6-6.2 um |
+| flux (7.4-13.45) | CALSPEC-direct; sigma(fR)/fR median 0.3 %; absolute ~1-2 % (CALSPEC) |
+| flux (4.5-7.4)   | ensemble shape, sigma(fR)/fR median ~5 %; tied through the 7.5-9.0 um CALSPEC overlap (scale 1.0492) |
+| L-flat           | identity; CALSPEC 5-position grid max |L-1| = 0.016 (MAD 0.003); GN/GS star repeats MAD 0.014 |
 
-Independent validation: a G=17.1 field star (2MASS/WISE SED) gives
-obs/expected = 1.016 +- 0.042; six GOODS-N G/K stars give 0.90-1.07.
+Independent validation: six GOODS-N G/K stars give per-star medians of
+0.89-1.07 against the v1.1 response; a G=17.1 field star (2MASS/WISE SED)
+gives obs/expected = 1.016 +- 0.042 (v1.0 measurement; the response changes
+by <2% over its 5-11 um fit range in v1.1).
 
 ## References
 - JWST absolute flux calibration approach: Gordon et al. 2022, AJ 163, 267.

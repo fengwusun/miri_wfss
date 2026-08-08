@@ -2,9 +2,9 @@
 
 JWST MIRI prism (P750L) wide-field slitless spectroscopy — calibration reference files and extraction workflow, produced by Fengwu Sun.
 
-When the MIRI LRS prism is used without the slit on the FULL imager array, every source in the illuminated field produces a dispersed mid-infrared spectrum (4.7–13.8 µm) — wide-field slitless spectroscopy (WFSS). Several archival JWST programs observed this way, but at the time of this writing (June 2026), there is no STScI pipeline support for extracting these data to my knowledge. This repository provides both the calibration and a complete, worked extraction path:
+When the MIRI LRS prism is used without the slit on the FULL imager array, every source in the illuminated field produces a dispersed mid-infrared spectrum (4.7–13.5 µm) — wide-field slitless spectroscopy (WFSS). Several archival JWST programs observed this way, but at the time of this writing (June 2026), there is no STScI pipeline support for extracting these data to my knowledge. This repository provides both the calibration and a complete, worked extraction path:
 
-- **`data/cal_v1.0/`** — the `MIRI_WFSS_CAL_v1.0` calibration suite: flat field, master sky v5 (consensus-patched, with an additive detector-defect map and optional PCA components), WFSS region mask, spectral tracing and dispersion polynomial tables (v2.1), and absolute response fR(λ) (v2, CALSPEC-anchored), with a SHA-256 manifest. The position dependence of the response (L-flat) was tested and is consistent with identity, so no L-flat correction is applied or shipped. See `data/cal_v1.0/README.md` for the calibration model and file details.
+- **`data/cal_v1.1/`** — the `MIRI_WFSS_CAL_v1.1` calibration suite: flat field, master sky v5 (consensus-patched, with an additive detector-defect map and optional PCA components), WFSS region mask, spectral tracing (v2.1) and dispersion (v3.1) polynomial tables, and absolute response fR(λ) (v3.1, CALSPEC-anchored), with a SHA-256 manifest. The position dependence of the response (L-flat) was tested and is consistent with identity, so no L-flat correction is applied or shipped. See `data/cal_v1.1/README.md` for the calibration model and file details.
 - **`MIRI_WFSS_extraction_example_FSun.ipynb`** — one self-contained notebook that turns public MIRI P750L FULL `rate` files into flux-calibrated 2D + 1D spectra: flat + sky calibration, WCS attachment, trace rectification, flux calibration, PA-grouped sigma-clipped co-addition, and boxcar/optimal 1D extraction. Committed with executed outputs so you can read the full worked example without running anything.
 - **`download_goodsn_example_rates.sh`** — fetches the example dataset (GO-4192; PI: Alberts, GOODS-N: 8 × 364 s P750L exposures, ~170 MB) directly from MAST.
 - **`data/catalogs/goodsn_example_sources.csv`** — the 9 galaxies with literature spectroscopic redshifts covered by the example exposures.
@@ -43,7 +43,7 @@ and the first run downloads a few MIRI imaging reference files (~100 MB) into th
 | 3 | rate → "lv1.5": flat-field + additive defect map + scaled master-sky subtraction + per-row de-banding (mode A; optional PCA mode B) |
 | 4 | attach a celestial WCS (`jwst` `AssignWcsStep` in imaging mode) and write lv1.5 files |
 | 5 | load the source catalog; footprint coverage check |
-| 6 | rectify a dispersed trace (v2.1 trace + wavelength polynomials, DQ masking, local background) |
+| 6 | rectify a dispersed trace (v2.1 trace + v3.1 wavelength polynomials, DQ masking, local background) |
 | 7 | flux-calibrate with the response fR(λ); single-exposure spectrum |
 | 8 | co-add exposures: PA grouping, sigma-clipped weighted mean, pairwise N = 2 rejection |
 | 9 | 1D extraction: small-aperture boxcar + optimal (Horne), measured/Gaussian/imaging profiles |
@@ -58,15 +58,15 @@ Example output (GN 1092837, z = 0.458, the brightest source in the example field
 
 ![example spectrum](media/spec_GN_1092837.png)
 
-## Calibration accuracy (v1.0)
+## Calibration accuracy (v1.1)
 
 | Component | Accuracy | Validation |
 |---|---|---|
 | Trace | MAD 0.055 px | 4,209 LMC point sources |
-| Wavelength | 0.10–0.25 resolution element (220–610 km/s RMS) | PN + galaxy lines, 7.9–13.1 µm |
-| Flux, 7.4–13.8 µm | σ(fR)/fR = 0.3%; 1–2% absolute | CALSPEC standard, direct |
+| Wavelength | 0.03–0.08 resolution element (87–144 km/s RMS) | PN + galaxy lines, 7.9–12.8 µm |
+| Flux, 7.4–13.45 µm | σ(fR)/fR = 0.3%; 1–2% absolute | CALSPEC standard, direct |
 | Flux, 4.7–7.4 µm | ~5% shape | stellar ensemble, overlap-tied |
-| L-flat | identity; max \|L−1\| = 0.010 (no correction applied) | CALSPEC 5-position grid; galaxy repeats MAD 4.4% |
+| L-flat | identity; max \|L−1\| = 0.016 (no correction applied) | CALSPEC 5-position grid; star repeats MAD 1.4% |
 | End-to-end | field star 1.016 ± 0.042; PN vs F560W image 1.01 (EE-corrected) | 2MASS/WISE SED; CAL-9505 visit |
 
 Full derivation, validation, and the GOODS-N/GOODS-S/LMC spectral atlas: Sun (2026).
@@ -74,6 +74,11 @@ Full derivation, validation, and the GOODS-N/GOODS-S/LMC spectral atlas: Sun (20
 ## Data credits
 
 The example data are from JWST program GO-4192 (PI: S. Alberts). The calibration suite is built from public exposures of GO-3224 (PI: J. McKinney), GO-4192, GO-4762 (PI: S. Fujimoto), GO-8544 (PI: J. Helton), CAL-9505 and CAL-9265 (PI: A. Petric), obtained from the [Mikulski Archive for Space Telescopes](https://mast.stsci.edu) (MAST) at the Space Telescope Science Institute. Source coordinates, F444W photometry, and redshift compilations draw on the JADES GOODS-N data release 5 ([Eisenstein et al. 2026](https://ui.adsabs.harvard.edu/abs/2026ApJS..283....6E/abstract); [Johnson et al. 2026](https://ui.adsabs.harvard.edu/abs/2026arXiv260115954J/abstract); [Robertson et al. 2026](https://ui.adsabs.harvard.edu/abs/2026arXiv260115956R/abstract)) and literature spectroscopic surveys of GOODS-N.
+
+#### v1.1 (2026.08.08):
+- Wavelength calibration corrected (v2.1 → v3.1): the red anchor of the planetary-nebula wavelength solution, previously identified as [Ar V] 13.102 µm, is [Ne II] 12.814 µm (the strongest PN line in this range in the ISO atlas of Bernard-Salas et al. 2001). Wavelengths shift by −41/−238/−353 nm at 11/12.8/13.5 µm relative to v2.1; residual RMS against the PN narrow lines improves to 87–144 km/s (0.03–0.08 resolution element) over 7.9–12.8 µm, validated against the PAH 11.3 µm band of the PN and of low-redshift GOODS galaxies.
+- Flux calibration re-derived on the corrected wavelength scale (`FLUXCAL_LRS_WFSS_v3.1.dat`): CALSPEC-direct over 7.44–13.45 µm (was 7.44–13.81 µm on the wrong scale), blue ensemble tie 1.0492. At fixed observed wavelength, calibrated flux densities change by <2% blueward of 11 µm and by up to ~+25% at 13.4 µm (the wavelength relabeling on a steep response). The valid range is now 4.7–13.45 µm.
+- The end-to-end field-star and PN photometric checks are carried over from v1.0 (the response changes by <2% over their 5–11 µm fit ranges). Example spectra re-extracted; `VERSION` and the SHA-256 manifest updated.
 
 #### v1.0.1 (2026.06.14):
 - Flux calibration, blue end: the ensemble-anchored response bins (`anchor=0`, 4.46–7.24 µm) were re-tied on the 7.5–9.0 µm CALSPEC overlap (scale 1.0423), shifting those bins by −0.33% from v1.0.0 — i.e. raising blue-end fluxes by 0.33%, well within the ~5% blue-shape uncertainty. The CALSPEC-direct red response (`anchor=1`, 7.44–13.81 µm) is unchanged. Example spectra re-extracted; `VERSION` and the SHA-256 manifest updated.
