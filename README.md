@@ -1,5 +1,7 @@
 # miri_wfss
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21944431.svg)](https://doi.org/10.5281/zenodo.21944431)
+
 JWST MIRI prism (P750L) wide-field slitless spectroscopy — calibration reference files and extraction workflow, produced by Fengwu Sun.
 
 When the MIRI LRS prism is used without the slit on the FULL imager array, every source in the illuminated field produces a dispersed mid-infrared spectrum (4.7–13.5 µm) — wide-field slitless spectroscopy (WFSS). Several archival JWST programs observed this way, but at the time of this writing (June 2026), there is no STScI pipeline support for extracting these data to my knowledge. This repository provides both the calibration and a complete, worked extraction path:
@@ -11,7 +13,7 @@ When the MIRI LRS prism is used without the slit on the FULL imager array, every
 
 If you have any question, please do not hesitate to contact me via my email: sunfengwu在westlake.edu.cn
 
-If you find the calibration products and/or this workflow helpful, it would be great if you could acknowledge it in your research and cite the MIRI WFSS calibration + atlas paper: **Sun (2026), "An Archival Calibration of JWST/MIRI Prism Wide-Field Slitless Spectroscopy: Methodology, Performance, and a Mid-Infrared Spectral Atlas of Galaxies at z = 0–4 in the GOODS Fields"** (in preparation; the arXiv/ADS link will appear here as soon as it is public, see also `CITATION.cff`).
+If you find the calibration products and/or this workflow helpful, it would be great if you could acknowledge it in your research and cite the MIRI WFSS calibration + atlas paper: **Sun (2026), "An Archival Calibration of JWST/MIRI Prism Wide-Field Slitless Spectroscopy: Methodology, Performance, and a Mid-Infrared Spectral Atlas of Galaxies at z = 0–4 in the GOODS Fields"** (in preparation; the arXiv/ADS link will appear here as soon as it is public, see also `CITATION.cff`). The calibration suite and pipeline are archived on Zenodo: concept DOI [10.5281/zenodo.21944431](https://doi.org/10.5281/zenodo.21944431) (always resolves to the latest version); this release (v1.1): [10.5281/zenodo.21944432](https://doi.org/10.5281/zenodo.21944432).
 
 ## Quick start
 
