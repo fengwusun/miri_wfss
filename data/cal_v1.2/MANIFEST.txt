@@ -1,0 +1,11 @@
+# MIRI_WFSS_CAL_v1.2 — sha256 manifest (repo subset of the 2026-09-17 release)
+# note: the L-flat is validated to be identity (max |L-1| = 0.016) and is intentionally not shipped or applied
+f01fd686c0bc02379b23227430e44cca71b3cf5b1d23189bba2115e8e10c87b9         697  DISPL_LRS_WFSS_P750L_v4.dat
+2c7e775c5ce2f95af2b4b226d79ce85d661f91a358ec7c1f3e991b06e1133840         686  DISP_LRS_WFSS_v2.1.dat
+ee4dfc11007294dffd928f667af0a445549d96fe923e89effea6a0717c0beb0f        2838  FLUXCAL_LRS_WFSS_v4.dat
+e4143fd743ef961a0146809e08278a7168a0ab9c5824b764a81e157b67891c28        1132  VERSION
+86399440cc1830c8d871764056c96ccbaf7867e0857f9f47be355b53b2a3bf9d    53288640  eigen_skies_v5_P750L.fits
+bdd42eecb9d97cbf7da1c5ca2efe738b7706e51023826410e920bda5f1dd5705     5293440  flat_P750L_F560W.fits
+0e68d2a1907364af12533de5868746384537c356209eb3361774de638a74d454        2333  hd163466_R_direct.ecsv
+b262c1877d032faef00320045a63afefae24f495521e8f453899f82893ee1a89    10584000  master_sky_P750L_v5.fits
+0ccc62c80d6a6fdcce7190a001966a05d59bd04da019ace62763ffb35817a0bf     1071360  region_mask_P750L.fits
