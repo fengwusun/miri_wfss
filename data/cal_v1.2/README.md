@@ -8,8 +8,8 @@ true MIR_WFSS) and CAL-9265 (Petric, HD 163466 CALSPEC standard).
 This directory is the v1.2 calibration suite (flattened layout, without the
 example-spectrum products).  v1.2 rebuilds the wavelength calibration on an
 external reference: the MIRI/MRS spectrum of the wavelength-calibration
-planetary nebula (SMP LMC 058 = LHA 120-N 133; Jones et al. 2023, MNRAS,
-doi:10.1093/mnras/stad1609; program CAL-1049), degraded to the WFSS
+planetary nebula (SMP LMC 058 = LHA 120-N 133; Jones et al. 2023,
+MNRAS 523, 2519; program CAL-1049), degraded to the WFSS
 resolution and cross-correlated
 feature by feature.  Two previously adopted anchor identifications were wrong
 ([Mg V] 5.610 um is the PAH 5.698 um band; [Ar V] 7.902 um is the PAH 7.834 um
@@ -94,7 +94,7 @@ by <2% over its 5-11 um fit range between v1.0 and v1.2).
 - CALSPEC: hd163466_stis_007.fits,
   https://www.stsci.edu/hst/instrumentation/reference-data-for-calibration-and-tools/astronomical-catalogs/calspec
 - Wavelength reference: MIRI/MRS spectrum of SMP LMC 058 (Jones et al. 2023,
-  MNRAS, doi:10.1093/mnras/stad1609; JWST program CAL-1049), degraded to the
+  MNRAS 523, 2519, doi:10.1093/mnras/stad1609; JWST program CAL-1049), degraded to the
   WFSS line-spread function; plus GOODS-N spec-z galaxy PAH/line anchors
   compiled from the literature (mostly available on SIMBAD).
 
