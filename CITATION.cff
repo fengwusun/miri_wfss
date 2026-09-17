@@ -4,8 +4,8 @@ message: >-
   from this repository, please cite the paper below and the Zenodo record
   (concept DOI 10.5281/zenodo.21944431).
 title: "miri_wfss: JWST MIRI P750L wide-field slitless spectroscopy calibration and extraction"
-version: v1.1
-date-released: 2026-08-08
+version: v1.2
+date-released: 2026-09-17
 license: MIT
 repository-code: "https://github.com/fengwusun/miri_wfss"
 doi: 10.5281/zenodo.21944431
