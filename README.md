@@ -1,5 +1,6 @@
 # miri_wfss
 
+[![arXiv](https://img.shields.io/badge/arXiv-2609.20935-b31b1b.svg)](https://arxiv.org/abs/2609.20935)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21944431.svg)](https://doi.org/10.5281/zenodo.21944431)
 
 This Github repo presents the calibration reference files and extraction workflow of **JWST MIRI prism (P750L) wide-field slitless spectroscopy**.
