@@ -15,7 +15,7 @@ This repository provides both the calibration and a complete, worked extraction 
 
 If you have any question or comments, please do not hesitate to contact me via my email: sunfengwu在westlake.edu.cn
 
-If you find the calibration products and/or this workflow helpful, it would be great if you could acknowledge it in your research and cite the MIRI WFSS calibration + atlas paper: **Sun et al. (2026), "An Archival Calibration of JWST/MIRI Prism Wide-Field Slitless Spectroscopy: Methodology, Performance, and a Mid-Infrared Spectral Atlas of Galaxies at z = 0–4 in the GOODS Fields"** (in preparation; the arXiv/ADS link will appear here as soon as it is public, see also `CITATION.cff`). The calibration suite and pipeline are archived on Zenodo: concept DOI [10.5281/zenodo.21944431](https://doi.org/10.5281/zenodo.21944431) (always resolves to the latest version); latest archived release (v1.2): [10.5281/zenodo.22803722](https://doi.org/10.5281/zenodo.22803722).
+If you find the calibration products and/or this workflow helpful, it would be great if you could acknowledge it in your research and cite the MIRI WFSS calibration + atlas paper: **Sun et al. (2026), "An Archival Calibration of JWST/MIRI Prism Wide-Field Slitless Spectroscopy: Methodology, Performance, and a Mid-Infrared Spectral Atlas of Galaxies at z = 0–4 in the GOODS-N/S Fields"** ([arXiv:2609.20935](https://ui.adsabs.harvard.edu/abs/2026arXiv260920935S/abstract); see also `CITATION.cff`). The calibration suite and pipeline are archived on Zenodo: concept DOI [10.5281/zenodo.21944431](https://doi.org/10.5281/zenodo.21944431) (always resolves to the latest version); latest archived release (v1.2): [10.5281/zenodo.22803722](https://doi.org/10.5281/zenodo.22803722).
 
 ## Quick start
 
@@ -73,7 +73,7 @@ Example output (GN 1092837, z = 0.458, the brightest source in the example field
 | L-flat | identity; max \|L−1\| = 0.016 (no correction applied) | CALSPEC 5-position grid; star repeats MAD 1.4% |
 | End-to-end | field star 1.016 ± 0.042; PN vs F560W image 1.01 (EE-corrected) | 2MASS/WISE SED; CAL-9505 visit |
 
-Full derivation, validation, and the GOODS-N/GOODS-S/LMC spectral atlas: Sun (2026).
+Full derivation, validation, and the GOODS-N/GOODS-S/LMC spectral atlas: [Sun et al. (2026), arXiv:2609.20935](https://ui.adsabs.harvard.edu/abs/2026arXiv260920935S/abstract).
 
 ## Data credits
 

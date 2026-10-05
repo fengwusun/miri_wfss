@@ -19,10 +19,30 @@ preferred-citation:
   title: >-
     An Archival Calibration of JWST/MIRI Prism Wide-Field Slitless
     Spectroscopy: Methodology, Performance, and a Mid-Infrared Spectral
-    Atlas of Galaxies at z = 0-4 in the GOODS Fields
+    Atlas of Galaxies at z = 0-4 in the GOODS-N/S Fields
   authors:
     - family-names: Sun
       given-names: Fengwu
       orcid: "https://orcid.org/0000-0002-4622-6617"
+    - family-names: "Álvarez-Márquez"
+      given-names: Javier
+      orcid: "https://orcid.org/0000-0002-7093-1877"
+    - family-names: Egami
+      given-names: Eiichi
+      orcid: "https://orcid.org/0000-0003-1344-9475"
+    - family-names: "Fernández Aranda"
+      given-names: Román
+      orcid: "https://orcid.org/0000-0002-7714-688X"
+    - family-names: Helton
+      given-names: Jakob M.
+      orcid: "https://orcid.org/0000-0003-4337-6211"
+    - family-names: Lin
+      given-names: Xiaojing
+      orcid: "https://orcid.org/0000-0001-6052-4234"
+    - family-names: Lyu
+      given-names: Jianwei
+      orcid: "https://orcid.org/0000-0002-6221-1829"
   year: 2026
-  journal: "in preparation"
+  journal: "arXiv e-prints"
+  doi: 10.48550/arXiv.2609.20935
+  url: "https://arxiv.org/abs/2609.20935"
