@@ -7,6 +7,10 @@ This Github repo presents the calibration reference files and extraction workflo
 
 When the MIRI LRS prism is used without the slit on the FULL imager array, every source in the illuminated field produces a dispersed mid-infrared spectrum (4.7–13.5 µm). This will effectively conduct wide-field slitless spectroscopy (WFSS). Several archival JWST programs observed this way, but at early June 2026 when this GitHub repo was created, there was no STScI pipeline support for extracting these data to my knowledge. (2026-09-17 added: See also [Kendrew et al. 2026](https://ui.adsabs.harvard.edu/abs/2026arXiv260916239K/abstract) for an independent MIRI WFSS survey of the HUDF by the MIRI EU instrument team). 
 
+![Animation: the P750L prism disperses every source in the MIRI imager field into a 5-14 micron spectrum; an AI agent calibrates the tracing, wavelength and flux; a 1D spectrum with PAH features is extracted for 180 galaxies](media/miri_wfss_explainer.gif)
+
+*MIRI WFSS in 15 seconds ([higher-quality MP4](media/miri_wfss_explainer.mp4)).*
+
 This repository provides both the calibration and a complete, worked extraction path:
 
 - **`data/cal_v1.2/`** — the `MIRI_WFSS_CAL_v1.2` calibration suite: flat field, master sky (v5, consensus-patched, with an additive detector-defect map and optional PCA components), WFSS region mask, spectral tracing (v2.1) and dispersion (v4, anchored to MIRI/MRS) polynomial tables, and absolute response fR(λ) (v4, anchored to CALSPEC), with a SHA-256 manifest. The position dependence of the response (L-flat) was tested and is consistent with identity, so no L-flat correction is applied or shipped. Please see `data/cal_v1.2/README.md` for the calibration model and file details.
